@@ -1,6 +1,8 @@
-import styles from './index.module.css';
+'use client';
 
-const Home = () => {
+import styles from './page.module.css';
+
+export default function Home() {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -11,7 +13,7 @@ const Home = () => {
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code} style={{ backgroundColor: '#fafafa' }}>
-            pages/index.js
+            src/app/page.tsx
           </code>
         </p>
 
@@ -54,6 +56,4 @@ const Home = () => {
       </footer>
     </div>
   );
-};
-
-export default Home;
+}
