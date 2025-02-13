@@ -1,22 +1,35 @@
-name: Deploy client
+name: CI/CD
 
-on:
-  workflow_run:
-    workflows: ['Test']
-    branches: [main]
-    types:
-      - completed
+on: [push, pull_request]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+      - uses: actions/cache@v4
+        id: npm-cache
+        with:
+          path: 'node_modules'
+          key: npm-${{ hashFiles('package-lock.json') }}
+      - run: npm install
+        if: steps.npm-cache.outputs.cache-hit != 'true'
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm run build
+
+  build:
+    if: github.ref_name == 'main'
+    needs: test
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.workflow_run.head_branch }}
       - uses: actions/setup-node@v3
         with:
           node-version: 22
