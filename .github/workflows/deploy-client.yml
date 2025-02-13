@@ -20,8 +20,8 @@ jobs:
           ref: ${{ github.event.workflow_run.head_branch }}
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
-      - uses: actions/cache@v3
+          node-version: 22
+      - uses: actions/cache@v4
         id: npm-cache
         with:
           path: 'node_modules'
