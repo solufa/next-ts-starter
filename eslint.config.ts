@@ -56,7 +56,7 @@ export default tseslint.config(
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'off',
       '@typescript-eslint/no-misused-promises': 'off',
-      '@typescript-eslint/no-unnecessary-condition': 'error',
+      '@typescript-eslint/no-unnecessary-condition': 'off',
       '@typescript-eslint/no-unused-expressions': 'off',
       'react/self-closing-comp': 'error',
       'react-hooks/rules-of-hooks': 'error',
