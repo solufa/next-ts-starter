@@ -18,5 +18,5 @@
     "plugins": [{ "name": "next" }]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "stylelint.config.js"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", ".next"]
 }
