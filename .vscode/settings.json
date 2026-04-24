@@ -6,8 +6,8 @@
     "source.fixAll.eslint": "explicit",
     "source.fixAll.stylelint": "explicit"
   },
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.referencesCodeLens.enabled": true,
+  "js/ts.tsdk": "node_modules/typescript/lib",
+  "js/ts.referencesCodeLens.enabled": true,
   "files.eol": "\n",
   "editor.tabSize": 2,
   "stylelint.validate": ["css"],
