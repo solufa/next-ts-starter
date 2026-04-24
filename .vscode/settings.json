@@ -1,20 +1,14 @@
 {
-  "eslint.run": "onSave",
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "oxc.oxc-vscode",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.fixAll.stylelint": "explicit"
+    "source.fixAll": "explicit"
   },
-  "js/ts.tsdk": "node_modules/typescript/lib",
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
   "js/ts.referencesCodeLens.enabled": true,
   "files.eol": "\n",
   "editor.tabSize": 2,
   "stylelint.validate": ["css"],
-
-  "files.insertFinalNewline": true,
-  "files.trimTrailingWhitespace": true,
-  "files.trimFinalNewlines": true,
 
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
